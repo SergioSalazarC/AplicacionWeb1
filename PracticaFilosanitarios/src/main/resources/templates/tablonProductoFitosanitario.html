@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org>">
+<head>
+<meta charset="ISO-8859-1">
+<title>Tablon de Productos Fitosanitarios</title>
+</head>
+<body>
+
+	
+	<p>Tablon de Productos Fitosanitarios</p></br>
+
+	<p th:each="producto : ${tabProductos}">
+		    <span th:text="'Nombre: '+ ${producto.nombre}" /><br/>
+		    <span th:text="'Descripcion : '+ ${producto.descripcion}" /><br/>
+		    <span th:text="'Plazo de reentrada : '+ ${producto.plazoDeReentrada}" /><br/>
+		    <span th:text="'Plazo de recoleccion : '+ ${producto.plazoDeRecoleccion}" /><br/>
+	</p>
+	
+	
+
+</body>
+</html>

@@ -18,6 +18,9 @@ public class ProductoFitosanitario {
 	private long plazoDeReentrada;
 	private long plazoDeRecoleccion;
 	
+	
+	
+	
 	public ProductoFitosanitario() {
 		
 	}
@@ -38,6 +41,10 @@ public class ProductoFitosanitario {
 	
 	public long getId() {
 		return id;
+	}
+	
+	public void setId(long idd) {
+		this.id=idd;
 	}
 
 	public String getNombre() {

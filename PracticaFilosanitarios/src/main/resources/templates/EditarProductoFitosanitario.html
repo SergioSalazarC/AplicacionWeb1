@@ -6,14 +6,18 @@
 </head>
 <body>
 
-	
-	<p>Tablon de Productos Fitosanitarios</p></br>
 
-	<p>
-		<span th:text="'Nombre: '+ ${producto.nombre}" /><br/>
-	    <span th:text="'Descripcion : '+ ${producto.descripcion}" /><br/>
-	    <span th:text="'Plazo de reentrada : '+ ${producto.plazoDeReentrada}" /><br/>
-	    <span th:text="'Plazo de recoleccion : '+ ${producto.plazoDeRecoleccion}" /><br/>
+	<p>		
+	    <form method= "post"  action="/actualizarProducto">	
+	    
+			<p> Id: <input type="number" name="id" th:value="${producto.id}" readonly/></p>
+			<p> Nombre: <input type="text" name="nombre" th:value="${producto.nombre}"/></p>	
+			<p> Descripcion: <textarea name="descripcion" th:text="${producto.descripcion}" rows=4 cols=40 > </textarea></p>		
+			<p> Plazo de reentrada: <input type="number"  name="plazoDeReentrada" th:value="${producto.plazoDeReentrada}" /></p>		
+			<p> Plazo de recoleccion: <input type="number"  name="plazoDeRecoleccion" th:value="${producto.plazoDeRecoleccion}" /></p>			
+			<p> Enviar: <input type="submit" value="send" /></p>	
+				
+		</form>
 	</p>
 	
 	<p><a href="/">Volver</a></p>

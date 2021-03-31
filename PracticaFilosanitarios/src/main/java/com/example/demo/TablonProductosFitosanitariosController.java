@@ -16,16 +16,13 @@ public class TablonProductosFitosanitariosController {
 	
 	@PostConstruct
 	public void init() {
-		repProductos.save(new ProductoFitosanitario("producto1",30,30));
-		repProductos.save(new ProductoFitosanitario("producto2","Descripcion no vacia",30,30));
+		repProductos.save(new ProductoFitosanitario("producto1",1,2));
+		repProductos.save(new ProductoFitosanitario("producto2","Descripcion del producto 2",3,4));
 	}
 	
 	@RequestMapping("/")
 	public String controller(Model model) {
 			
-		
-
-		
 		model.addAttribute("tabProductos",repProductos.findAll());
 		
 		return "TablonProductoFitosanitario.html";

@@ -8,21 +8,15 @@
 
 	
 	<p>Tablon de Productos Fitosanitarios</p></br>
-	
-	<p>	
-	    <a th:href= "AddProductoFitosanitario.html">Anadir nuevo producto</a> <br/>
-	</p>
 
-	<p th:each="producto : ${tabProductos}">		
-	    <span th:text="'Nombre: '+ ${producto.nombre}" />  <br/>
+	<p>
+		<span th:text="'Nombre: '+ ${producto.nombre}" /><br/>
 	    <span th:text="'Descripcion : '+ ${producto.descripcion}" /><br/>
 	    <span th:text="'Plazo de reentrada : '+ ${producto.plazoDeReentrada}" /><br/>
 	    <span th:text="'Plazo de recoleccion : '+ ${producto.plazoDeRecoleccion}" /><br/>
-	    <a th:href= "@{/EditarProducto(id = ${producto.id})}">Editar</a> <br/>
-	    <br/>
-	    
 	</p>
 	
+	<p><a href="/">Volver</a></p>
 	
 
 </body>

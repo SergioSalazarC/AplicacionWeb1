@@ -25,15 +25,19 @@ public class ProductoFitosanitario {
 	public ProductoFitosanitario(String nom, String des, long plazoRen, long plazoRec) {
 		this.nombre=nom;
 		this.descripcion=des;
-		this.plazoDeRecoleccion=plazoRen;
+		this.plazoDeReentrada=plazoRen;
 		this.plazoDeRecoleccion=plazoRec;
 	}
 	
 	public ProductoFitosanitario(String nom, long plazoRen, long plazoRec) {
 		this.nombre=nom;
 		this.descripcion="";
-		this.plazoDeRecoleccion=plazoRen;
+		this.plazoDeReentrada=plazoRen;
 		this.plazoDeRecoleccion=plazoRec;
+	}
+	
+	public long getId() {
+		return id;
 	}
 
 	public String getNombre() {

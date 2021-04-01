@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Añadir tratamiento</title>
+</head>
+<body>
+	<form method= "post"  action="/addTratamiento">	
+		<p> Producto: <select NAME='PRODUCTO'>
+			<option th:each = "producto: ${tabProductos}" value = ${producto.id} text = ${producto.nombre}></option>
+			</select>
+		</p>	
+		<p> Enviar: <input type="submit" value="send" /></p>
+	</form>
+</body>
+</html>

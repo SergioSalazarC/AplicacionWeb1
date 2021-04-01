@@ -17,7 +17,7 @@ public class AñadirTratamientoController {
 	private TratamientoRepository repTratamientos;
 	
 	
-	@RequestMapping("/addTrat")
+	@RequestMapping("/AddTratamiento.html")
 	public String controller(Model model) {
 		model.addAttribute("tabProductos", repProductos.findAll());
 		return("AddTratamiento.html");

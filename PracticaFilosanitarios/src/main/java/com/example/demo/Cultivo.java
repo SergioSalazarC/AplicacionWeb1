@@ -1,11 +1,15 @@
 package com.example.demo;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
-import java.time.LocalDate
+import javax.persistence.OneToMany;
+
+import java.time.LocalDate;
 import java.util.*;
 
 @Entity
@@ -21,7 +25,7 @@ public class Cultivo {
 	@JoinTable(name="Tratamiento",
 	joinColumns=@JoinColumn(name="CULT_ID"),
 	inverseJoinColumns=@JoinColumn(name="PROD_ID"))
-	private Arraylist<Tratamiento> tratamientos; 
+	private ArrayList<Tratamiento> tratamientos; 
 	public Cultivo() {		
 	}
 	public Cultivo(String e, String v, LocalDate p,String z) {
@@ -46,7 +50,7 @@ public class Cultivo {
 		this.id = idd;
 	}
 	public String getEspecie() {
-		return this.especie
+		return this.especie;
 	}
 	public void setEspecie(String esp) {
 		this.especie=esp;

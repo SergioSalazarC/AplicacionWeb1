@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org>">
+<head>
+<meta charset="ISO-8859-1">
+<title>Tablon de Tratamientos</title>
+</head>
+<body>
+
+	
+	<p>Tablon de Tratamientos</p></br>
+	
+	<p>	
+	    <a th:href= "AddTratamiento.html">Anadir nuevo tratamiento</a> <br/>
+	</p>
+
+	<p th:each="tratamiento : ${tabTratamientos}">		
+	    <span th:text="'Producto: '+ ${tratamiento.producto.nombre}" />  <br/>
+	    <span th:text="'Numero de lote: '+ ${tratamiento.numeroLoteFabricacion}" />  <br/>
+	    <span th:text="'Fecha del tratamiento : '+ ${tratamiento.fechaTratamiento}" /><br/>
+	    <span th:text="'Fecha de reentrada : '+ ${tratamiento.fechaReentrada}" /><br/>
+	    <span th:text="'Fecha de recoleccion : '+ ${tratamiento.fechaRecoleccion}" /><br/>
+	    <a th:href= "@{/EditarTratamiento(id = ${tratamiento.id})}">Editar</a> <br/>
+	    <br/>
+	    
+	</p>
+	
+	
+
+</body>
+</html>

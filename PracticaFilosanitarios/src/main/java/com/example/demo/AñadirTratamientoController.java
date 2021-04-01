@@ -2,6 +2,7 @@ package com.example.demo;
 
 import java.sql.Date;
 import java.time.LocalDate;
+import java.time.ZoneId;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,11 +27,10 @@ public class AñadirTratamientoController {
 	@RequestMapping("/addTratamiento")
 	public String addTrat(
 			@RequestParam(value= "producto")long productoId,@RequestParam(value= "numeroLoteFabricacion") String numeroLoteFabricacion,@RequestParam(value= "fechaTratamiento") Date fecha,  Model model) {
-		LocalDate fechaTratamiento = LocalDate.of(fecha.getYear(), fecha.getMonth(), fecha.getDay());
+		LocalDate fechaTratamiento = fecha.toLocalDate();
 		ProductoFitosanitario producto = repProductos.findById(productoId);
 		repTratamientos.save(new Tratamiento(producto, numeroLoteFabricacion, fechaTratamiento));
 		
 		return "mensaje.html";
 	}
-	
 }

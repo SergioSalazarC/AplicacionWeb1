@@ -15,17 +15,78 @@ public class Tratamiento {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
 	
+	/*
 	@ManyToOne
 	@JoinColumn(name="CULT_ID")
-	private Cultivo cultivo;
+	private Cultivo cultivo;*/
+	
 	
 	@ManyToOne
 	@JoinColumn(name="PROD_ID")
 	private ProductoFitosanitario producto;
 	
-	private String numeroLoteFrabricacion;
+	private String numeroLoteFabricacion;
 	private LocalDate fechaTratamiento;
-	private LocalDate fechaTermina;
+	private LocalDate fechaReentrada;
+	private LocalDate fechaRecoleccion;
 	
+	public Tratamiento() {}
+	public Tratamiento (/*Cultivo cult,*/ ProductoFitosanitario prod, String numero, LocalDate fecha) {
+		//this.cultivo = cult;
+		this.producto = prod;
+		this.numeroLoteFabricacion = numero;
+		this.fechaTratamiento = fecha;
+		this.fechaReentrada = this.fechaTratamiento.plusDays(this.producto.getPlazoDeReentrada());
+		this.fechaRecoleccion = this.fechaTratamiento.plusDays(this.producto.getPlazoDeRecoleccion());
+	}
+
+	public long getId() {
+		return id;
+	}
+	
+	/*
+	public Cultivo getCultivo() {
+		return cultivo;
+	}
+
+	public void setCultivo(Cultivo cultivo) {
+		this.cultivo = cultivo;
+	}
+*/
+	public ProductoFitosanitario getProducto() {
+		return producto;
+	}
+
+	public void setProducto(ProductoFitosanitario producto) {
+		this.producto = producto;
+		this.fechaReentrada = this.fechaTratamiento.plusDays(this.producto.getPlazoDeReentrada());
+		this.fechaRecoleccion = this.fechaTratamiento.plusDays(this.producto.getPlazoDeRecoleccion());
+	}
+
+	public String getNumeroLoteFabricacion() {
+		return numeroLoteFabricacion;
+	}
+
+	public void setNumeroLoteFabricacion(String numeroLoteFabricacion) {
+		this.numeroLoteFabricacion = numeroLoteFabricacion;
+	}
+
+	public LocalDate getFechaTratamiento() {
+		return fechaTratamiento;
+	}
+
+	public void setFechaTratamiento(LocalDate fechaTratamiento) {
+		this.fechaTratamiento = fechaTratamiento;
+		this.fechaReentrada = this.fechaTratamiento.plusDays(this.producto.getPlazoDeReentrada());
+		this.fechaRecoleccion = this.fechaTratamiento.plusDays(this.producto.getPlazoDeRecoleccion());
+	}
+
+	public LocalDate getFechaReentrada() {
+		return fechaReentrada;
+	}
+
+	public LocalDate getFechaRecoleccion() {
+		return fechaRecoleccion;
+	}	
 	
 }

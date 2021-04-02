@@ -2,14 +2,14 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Añadir tratamiento</title>
+<title>Aï¿½adir tratamiento</title>
 </head>
 <body>
 	<form method= "post"  action="/addTratamiento">	
 		<p> Producto: <select name="producto">
 			<option th:each = "producto: ${tabProductos}" th:value = ${producto.id} th:text = ${producto.nombre}></option>
 			</select>
-			<a href="addProductoFitosanitario.html">Añadir un producto fitosanitario</a>
+			<a href="addProductoFitosanitario.html">Aï¿½adir un producto fitosanitario</a>
 		</p>
 		<p> Numero de lote de fabricacion: <input type="text" name="numeroLoteFabricacion" ></p>		
 		<p> Fecha de realizacion: <input type= "date" name ="fechaTratamiento"></p>

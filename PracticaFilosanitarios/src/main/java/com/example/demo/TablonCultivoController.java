@@ -1,8 +1,7 @@
 package com.example.demo;
 
 import javax.annotation.PostConstruct;
-import java.time.LocalDate;
-import java.util.Date;
+import java.sql.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,8 +16,8 @@ public class TablonCultivoController {
 	
 	@PostConstruct
 	public void init() {
-		repCultivos.save(new Cultivo("Trigo","Espelta",new Date(2019,4,12 ), "zona norte del publo Iniesta" ));
-		repCultivos.save(new Cultivo("vid","Syrah",new Date(1999,17,3)));
+		repCultivos.save(new Cultivo("Trigo","Espelta",new Date(119,4,12 ), "zona norte del publo Iniesta" ));
+		repCultivos.save(new Cultivo("vid","Syrah",new Date(98,17,3)));
 	}
 	
 	@RequestMapping("/cultivo")

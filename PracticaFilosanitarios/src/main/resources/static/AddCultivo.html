@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
 	<meta charset="ISO-8859-1">
@@ -10,7 +10,6 @@
 	<form method="post" action="/addCultivo">
 		<p> Especie del cultivo: <input type="text" name="especie"></p>
 		<p> Variedad: <input type="text" name="variedad"></p>
-		<p> Descripcion: <textarea name="descripcion" rows=4 cols=40></textarea></p>
 		<p> Fecha en al que fue plantado: <input type="date" name="plantado"></p>
 		<p> Zona en la que fue plantado: <textarea name="zona" rows=4 cols=40></textarea></p>
 		<p> Enviar: <input type="submit" value="send" /></p>

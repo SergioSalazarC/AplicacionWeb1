@@ -16,7 +16,8 @@ public class ActualizarCultivoController {
 		aux.setVariedad(recogido.getVariedad());
 		aux.setZona(recogido.getZona());
 		aux.setPlantado(recogido.getPlantado());
-		aux.setTratamientos(recogido.getTratamientos());
+		/*aux.setTratamientos(recogido.getTratamientos());*/
+		repCultivo.save(aux);
 		return "mensaje2.html";
 	}
 }

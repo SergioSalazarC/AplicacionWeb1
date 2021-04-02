@@ -8,8 +8,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import java.time.LocalDate;
-import java.util.*;
+import java.sql.Date;
 
 @Entity
 public class Cultivo {
@@ -20,11 +19,8 @@ public class Cultivo {
 	private String variedad;
 	private Date plantado;
 	private String zona;
-	@OneToMany
-	@JoinTable(name="Tratamiento",
-	joinColumns=@JoinColumn(name="CULT_ID"),
-	inverseJoinColumns=@JoinColumn(name="PROD_ID"))
-	private ArrayList<Tratamiento> tratamientos; 
+	/*@OneToMany(mappedBy="cultivo")
+	private ArrayList<Tratamiento> tratamientos; */
 	public Cultivo() {		
 	}
 	public Cultivo(String e, String v, Date p,String z) {
@@ -32,7 +28,7 @@ public class Cultivo {
 		this.variedad=v;
 		this.plantado=p;
 		this.zona=z;
-		this.tratamientos = new ArrayList<Tratamiento>();
+		/*this.tratamientos = new ArrayList<Tratamiento>();*/
 				
 	}
 	public Cultivo(String e, String v, Date p) {
@@ -40,21 +36,22 @@ public class Cultivo {
 		this.variedad=v;
 		this.plantado=p;
 		this.zona="";
-		this.tratamientos = new ArrayList<Tratamiento>();
+		/*this.tratamientos = new ArrayList<Tratamiento>();*/
 	}
-	public Cultivo(String e, String v, Date p,ArrayList<Tratamiento> trat,String z) {
+	/*public Cultivo(String e, String v, Date p,ArrayList<Tratamiento> trat,String z) {
 		this.especie=e;
 		this.variedad=v;
 		this.plantado=p;
 		this.zona=z;
 		this.tratamientos = trat;
-	}public Cultivo(String e, String v, Date p,ArrayList<Tratamiento> trat) {
+	}*/
+	/*public Cultivo(String e, String v, Date p,rrayList<Tratamiento> trat) {
 		this.especie=e;
 		this.variedad=v;
 		this.plantado=p;
 		this.zona="";
 		this.tratamientos = trat;
-	}
+	}*/
 	
 	public long getId() {
 		return this.id;
@@ -86,7 +83,7 @@ public class Cultivo {
 	public void setPlantado(Date plat) {
 		this.plantado = plat;
 	}
-	public ArrayList<Tratamiento> getTratamientos() {
+	/*public ArrayList<Tratamiento> getTratamientos() {
 		return this.tratamientos;
 	}
 	public void setTratamientos(ArrayList<Tratamiento> trat) {
@@ -94,5 +91,5 @@ public class Cultivo {
 	}
 	public void añadirtratamiento(Tratamiento trat) {
 		this.tratamientos.add(trat);
-	}
+	}*/
 }

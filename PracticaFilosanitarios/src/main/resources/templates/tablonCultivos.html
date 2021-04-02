@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org>">
 <head>
 <meta charset="ISO-8859-1">
@@ -18,17 +18,17 @@
 	    <span th:text="'Variedad: '+ ${cultivo.variedad}" />  <br/>
 	    <span th:text="'Fecha en la que fue plantado : '+ ${cultivo.plantado}" /><br/>
 	    <span th:text="'zona en la que fue plantado : '+ ${cultivo.zona}" /><br/>
-	    <span th:text="'tratamientos : " /><br/>
+	    <!--<span th:text="'tratamientos : " /><br/>
 	    <p th:each="tratamiento : ${cultivo.tratamientos}">
-	    	<span th:text="'Nombre: '+ ${tratamiento}"/><br/>
-	    </p>
+	    	<span th:text="'Nombre: '+ ${tratamiento.numeroLoteFabricacion}"/><br/>
+	    	</p>  -->
 	    <a th:href= "@{/EditarCultivo(id = ${cultivo.id})}">Editar</a> <br/>
 	    <br/>
 	    
 	</p>
 	<p>
 		<a th:href = "tratamientos">Ir al tablon de tratamientos</a>
-		<a th:href = "/">Ir al tablon de productos fitosanitarios</a>
+		<a href = "/">Ir al tablon de productos fitosanitarios</a>
 	</p>
 	
 

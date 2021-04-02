@@ -31,11 +31,11 @@ public class Tratamiento {
 	private LocalDate fechaRecoleccion;
 	
 	public Tratamiento() {}
-	public Tratamiento (/*Cultivo cult,*/ ProductoFitosanitario prod, String numero, LocalDate fecha) {
+	public Tratamiento (/*Cultivo cult,*/ ProductoFitosanitario producto, String numeroLoteFabricacion, LocalDate fechaTratamiento) {
 		//this.cultivo = cult;
-		this.producto = prod;
-		this.numeroLoteFabricacion = numero;
-		this.fechaTratamiento = fecha;
+		this.producto = producto;
+		this.numeroLoteFabricacion = numeroLoteFabricacion;
+		this.fechaTratamiento = fechaTratamiento;
 		this.fechaReentrada = this.fechaTratamiento.plusDays(this.producto.getPlazoDeReentrada());
 		this.fechaRecoleccion = this.fechaTratamiento.plusDays(this.producto.getPlazoDeRecoleccion());
 	}

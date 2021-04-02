@@ -1,0 +1,36 @@
+!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org>">
+<head>
+<meta charset="ISO-8859-1">
+<title>Tablon de Cultivos</title>
+</head>
+<body>
+
+	
+	<p>Tablon de Cultivos</p></br>
+	
+	<p>	
+	    <a th:href= "AddCultivo.html">Anadir nuevo cultivo</a> <br/>
+	</p>
+
+	<p th:each="cultivo : ${tabCultivos}">		
+	    <span th:text="'Especie: '+ ${cultivo.especie}" />  <br/>
+	    <span th:text="'Variedad: '+ ${cultivo.variedad}" />  <br/>
+	    <span th:text="'Fecha en la que fue plantado : '+ ${cultivo.plantado}" /><br/>
+	    <span th:text="'zona en la que fue plantado : '+ ${cultivo.zona}" /><br/>
+	    <span th:text="'tratamientos : " /><br/>
+	    <p th:each="tratamiento : ${cultivo.tratamientos}">
+	    	<span th:text="'Nombre: '+ ${tratamiento}"/><br/>
+	    </p>
+	    <a th:href= "@{/EditarCultivo(id = ${cultivo.id})}">Editar</a> <br/>
+	    <br/>
+	    
+	</p>
+	<p>
+		<a th:href = "tratamientos">Ir al tablon de tratamientos</a>
+		<a th:href = "/">Ir al tablon de productos fitosanitarios</a>
+	</p>
+	
+
+</body>
+</html>

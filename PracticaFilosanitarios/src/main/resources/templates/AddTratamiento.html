@@ -6,10 +6,13 @@
 </head>
 <body>
 	<form method= "post"  action="/addTratamiento">	
-		<p> Producto: <select NAME='PRODUCTO'>
-			<option th:each = "producto: ${tabProductos}" value = ${producto.id} text = ${producto.nombre}></option>
+		<p> Producto: <select name="producto">
+			<option th:each = "producto: ${tabProductos}" th:value = ${producto.id} th:text = ${producto.nombre}></option>
 			</select>
-		</p>	
+			<a href="addProductoFitosanitario.html">Añadir un producto fitosanitario</a>
+		</p>
+		<p> Numero de lote de fabricacion: <input type="text" name="numeroLoteFabricacion" ></p>		
+		<p> Fecha de realizacion: <input type= "date" name ="fechaTratamiento"></p>
 		<p> Enviar: <input type="submit" value="send" /></p>
 	</form>
 </body>

@@ -9,6 +9,9 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
 
 @Entity
 public class Cultivo {
@@ -19,8 +22,8 @@ public class Cultivo {
 	private String variedad;
 	private Date plantado;
 	private String zona;
-	/*@OneToMany(mappedBy="cultivo")
-	private ArrayList<Tratamiento> tratamientos; */
+	@OneToMany(mappedBy="cultivo")
+	private Collection<Tratamiento> tratamientos;
 	public Cultivo() {		
 	}
 	public Cultivo(String e, String v, Date p,String z) {
@@ -28,7 +31,7 @@ public class Cultivo {
 		this.variedad=v;
 		this.plantado=p;
 		this.zona=z;
-		/*this.tratamientos = new ArrayList<Tratamiento>();*/
+		this.tratamientos = new HashSet();
 				
 	}
 	public Cultivo(String e, String v, Date p) {
@@ -83,13 +86,13 @@ public class Cultivo {
 	public void setPlantado(Date plat) {
 		this.plantado = plat;
 	}
-	/*public ArrayList<Tratamiento> getTratamientos() {
+	public Collection<Tratamiento> getTratamientos() {
 		return this.tratamientos;
 	}
-	public void setTratamientos(ArrayList<Tratamiento> trat) {
+	public void setTratamientos(Collection<Tratamiento> trat) {
 		this.tratamientos = trat;
 	}
-	public void añadirtratamiento(Tratamiento trat) {
+	public void addTratamiento(Tratamiento trat) {
 		this.tratamientos.add(trat);
-	}*/
+	}
 }

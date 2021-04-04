@@ -13,7 +13,8 @@
 	    <a th:href= "AddTratamiento.html">Anadir nuevo tratamiento</a> <br/>
 	</p>
 
-	<p th:each="tratamiento : ${tabTratamientos}">		
+	<p th:each="tratamiento : ${tabTratamientos}">
+		<span th:text="'Cultivo: '+ ${tratamiento.cultivo.especie}" />  <br/>
 	    <span th:text="'Producto: '+ ${tratamiento.producto.nombre}" />  <br/>
 	    <span th:text="'Numero de lote: '+ ${tratamiento.numeroLoteFabricacion}" />  <br/>
 	    <span th:text="'Fecha del tratamiento : '+ ${tratamiento.fechaTratamiento}" /><br/>
@@ -23,7 +24,10 @@
 	    <br/>
 	    
 	</p>
-	
+	<p>
+	<a href = "/">Ir al tablon de productos fitosanitarios</a>
+	<a href = "cultivo">Ir al tablon de cultivos</a>
+	</p>
 	
 
 </body>

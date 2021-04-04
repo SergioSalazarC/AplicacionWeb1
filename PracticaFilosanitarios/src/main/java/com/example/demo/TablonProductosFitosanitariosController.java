@@ -25,7 +25,7 @@ public class TablonProductosFitosanitariosController {
 			
 		model.addAttribute("tabProductos",repProductos.findAll());
 		
-		return "TablonProductoFitosanitario.html";
+		return "tablonProductoFitosanitario.html";
 			
 	}
 	

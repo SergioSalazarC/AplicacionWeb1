@@ -15,15 +15,21 @@ public class ActualizarTratamiento {
 	private TratamientoRepository repTratamientos;
 	@Autowired
 	private ProductoFitosanitarioRepository repProductos;
+	@Autowired
+	private CultivoRepository repCultivos;
 	
 	@RequestMapping("/actualizarTratamiento")
-	public String controller(@RequestParam(value= "id")long id,
+	public String controller(@RequestParam(value= "id")long id,@RequestParam(value= "cultivo")long cultivoId,
 			@RequestParam(value= "producto")long productoId,@RequestParam(value= "numeroLoteFabricacion") String numeroLoteFabricacion,@RequestParam(value= "fechaTratamiento") Date fecha,  Model model) {
 			Tratamiento aux = repTratamientos.getOne(id);
+			Cultivo cultivo = repCultivos.getOne(cultivoId);
+			aux.setCultivo(cultivo);
 			aux.setProducto(repProductos.getOne(productoId));
 			aux.setNumeroLoteFabricacion(numeroLoteFabricacion);
 			aux.setFechaTratamiento(fecha.toLocalDate());
 			repTratamientos.save(aux);
+			cultivo.addTratamiento(aux);
+			repCultivos.save(cultivo);
 			return "mensaje2.html";
 	}
 

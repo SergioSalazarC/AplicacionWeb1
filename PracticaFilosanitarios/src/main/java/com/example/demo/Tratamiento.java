@@ -15,10 +15,10 @@ public class Tratamiento {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
 	
-	/*
+	
 	@ManyToOne
 	@JoinColumn(name="CULT_ID")
-	private Cultivo cultivo;*/
+	private Cultivo cultivo;
 	
 	
 	@ManyToOne
@@ -31,8 +31,8 @@ public class Tratamiento {
 	private LocalDate fechaRecoleccion;
 	
 	public Tratamiento() {}
-	public Tratamiento (/*Cultivo cult,*/ ProductoFitosanitario producto, String numeroLoteFabricacion, LocalDate fechaTratamiento) {
-		//this.cultivo = cult;
+	public Tratamiento (Cultivo cultivo,ProductoFitosanitario producto, String numeroLoteFabricacion, LocalDate fechaTratamiento) {
+		this.cultivo = cultivo;
 		this.producto = producto;
 		this.numeroLoteFabricacion = numeroLoteFabricacion;
 		this.fechaTratamiento = fechaTratamiento;
@@ -44,7 +44,7 @@ public class Tratamiento {
 		return id;
 	}
 	
-	/*
+	
 	public Cultivo getCultivo() {
 		return cultivo;
 	}
@@ -52,7 +52,7 @@ public class Tratamiento {
 	public void setCultivo(Cultivo cultivo) {
 		this.cultivo = cultivo;
 	}
-*/
+	
 	public ProductoFitosanitario getProducto() {
 		return producto;
 	}

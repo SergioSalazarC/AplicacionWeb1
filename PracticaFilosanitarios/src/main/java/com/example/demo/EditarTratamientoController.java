@@ -13,13 +13,15 @@ public class EditarTratamientoController {
 	private TratamientoRepository repTratamientos;
 	@Autowired
 	private ProductoFitosanitarioRepository repProductos;
+	@Autowired
+	private CultivoRepository repCultivos;
 	
 	@RequestMapping("/EditarTratamiento")
 	public String controller(@RequestParam int id, Model model) {
 			model.addAttribute("tratamiento",repTratamientos.getOne((long) id));
 			model.addAttribute("tabProductos", repProductos.findAll());
+			model.addAttribute("tabCultivos", repCultivos.findAll());
 			return "EditarTratamiento.html";
-			
 	}
 	
 }

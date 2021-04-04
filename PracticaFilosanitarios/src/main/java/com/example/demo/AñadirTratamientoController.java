@@ -38,6 +38,6 @@ public class AñadirTratamientoController {
 		repTratamientos.save(tratamiento);
 		cultivo.addTratamiento(tratamiento);
 		repCultivos.save(cultivo);
-		return "mensaje.html";
+		return "mensaje4.html";
 	}
 }

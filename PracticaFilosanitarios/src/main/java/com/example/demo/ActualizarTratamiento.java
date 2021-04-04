@@ -30,7 +30,7 @@ public class ActualizarTratamiento {
 			repTratamientos.save(aux);
 			cultivo.addTratamiento(aux);
 			repCultivos.save(cultivo);
-			return "mensaje2.html";
+			return "mensaje5.html";
 	}
 
 }

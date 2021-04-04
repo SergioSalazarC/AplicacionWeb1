@@ -23,15 +23,18 @@ public class Cultivo {
 	private Date plantado;
 	private String zona;
 	@OneToMany(mappedBy="cultivo")
-	private Collection<Tratamiento> tratamientos;
+	private Collection<Tratamiento> tratamientos = new HashSet<Tratamiento>();
+	
 	public Cultivo() {		
 	}
+	
 	public Cultivo(String e, String v, Date p,String z) {
 		this.especie=e;
 		this.variedad=v;
 		this.plantado=p;
 		this.zona=z;
-		this.tratamientos = new HashSet();
+		this.tratamientos.add(new Tratamiento());
+		//this.tratamientos = new HashSet();
 				
 	}
 	public Cultivo(String e, String v, Date p) {
@@ -39,6 +42,7 @@ public class Cultivo {
 		this.variedad=v;
 		this.plantado=p;
 		this.zona="";
+		this.tratamientos.add(new Tratamiento());
 		/*this.tratamientos = new ArrayList<Tratamiento>();*/
 	}
 	/*public Cultivo(String e, String v, Date p,ArrayList<Tratamiento> trat,String z) {

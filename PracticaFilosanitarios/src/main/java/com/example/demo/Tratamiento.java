@@ -45,6 +45,11 @@ public class Tratamiento {
 	}
 	
 	
+	@Override
+	public String toString() {
+		return( "Tratamiento" + this.id);
+	}
+	
 	public Cultivo getCultivo() {
 		return cultivo;
 	}

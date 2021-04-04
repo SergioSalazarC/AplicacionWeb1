@@ -18,10 +18,13 @@
 	    <span th:text="'Variedad: '+ ${cultivo.variedad}" />  <br/>
 	    <span th:text="'Fecha en la que fue plantado : '+ ${cultivo.plantado}" /><br/>
 	    <span th:text="'zona en la que fue plantado : '+ ${cultivo.zona}" /><br/>
-	    <!--<span th:text="'tratamientos : " /><br/>
+	    <span th:text="'tratamientos : ' + ${cultivo.tratamientos}" /><br/>
+	    
+	    <!--
 	    <p th:each="tratamiento : ${cultivo.tratamientos}">
 	    	<span th:text="'Nombre: '+ ${tratamiento.numeroLoteFabricacion}"/><br/>
-	    	</p>  -->
+	    </p>
+	    -->
 	    <a th:href= "@{/EditarCultivo(id = ${cultivo.id})}">Editar</a> <br/>
 	    <br/>
 	    

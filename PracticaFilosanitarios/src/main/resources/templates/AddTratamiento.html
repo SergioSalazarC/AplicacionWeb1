@@ -9,12 +9,12 @@
 		<p> Cultivo: <select name="cultivo">
 			<option th:each = "cultivo: ${tabCultivos}" th:value = ${cultivo.id} th:text = ${cultivo.especie}></option>
 			</select>
-			<a href="addCultivo.html">Anadir un cultivo</a>
+			<a href="AddCultivo.html">Anadir un cultivo</a>
 		</p>
 		<p> Producto: <select name="producto">
 			<option th:each = "producto: ${tabProductos}" th:value = ${producto.id} th:text = ${producto.nombre}></option>
 			</select>
-			<a href="addProductoFitosanitario.html">A�adir un producto fitosanitario</a>
+			<a href="AddProductoFitosanitario.html">A�adir un producto fitosanitario</a>
 		</p>
 		<p> Numero de lote de fabricacion: <input type="text" name="numeroLoteFabricacion" ></p>		
 		<p> Fecha de realizacion: <input type= "date" name ="fechaTratamiento"></p>

@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import java.sql.Date;
+import java.time.LocalDate;
 
 import javax.annotation.PostConstruct;
 
@@ -23,10 +24,15 @@ public class MainPageController {
 	
 	@PostConstruct
 	public void init() {
-		repProductos.save(new ProductoFitosanitario("producto1",1,2));
+		ProductoFitosanitario producto1 = new ProductoFitosanitario("producto1",1,2);
+		repProductos.save(producto1);
 		repProductos.save(new ProductoFitosanitario("producto2","Descripcion del producto 2",3,4));
-		repCultivos.save(new Cultivo("Trigo","Espelta",new Date(119,4,12 ), "zona norte del publo Iniesta" ));
+		Cultivo cultivo1 = new Cultivo("Trigo","Espelta",new Date(119,4,12 ), "zona norte del pueblo Iniesta" );
+		repCultivos.save(cultivo1);
 		repCultivos.save(new Cultivo("vid","Syrah",new Date(98,17,3)));
+		Tratamiento tratamiento1 = new Tratamiento(cultivo1, producto1, "1234AAA", LocalDate.of(2000, 8, 23));
+		repTratamientos.save(tratamiento1);
+		cultivo1.addTratamiento(tratamiento1);
 	}
 	
 	@RequestMapping("/")

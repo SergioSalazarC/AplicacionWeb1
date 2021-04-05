@@ -19,7 +19,7 @@ public class TablonTratamientosController {
 		
 	}
 	
-	@RequestMapping("/tratamientos")
+	@RequestMapping("/tablontratamientos")
 	public String controller(Model model) {
 			
 		model.addAttribute("tabTratamientos",repTratamientos.findAll());

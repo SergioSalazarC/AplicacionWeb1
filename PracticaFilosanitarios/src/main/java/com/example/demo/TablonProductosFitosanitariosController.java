@@ -14,18 +14,14 @@ public class TablonProductosFitosanitariosController {
 	private ProductoFitosanitarioRepository repProductos;
 	
 	
-	@PostConstruct
-	public void init() {
-		repProductos.save(new ProductoFitosanitario("producto1",1,2));
-		repProductos.save(new ProductoFitosanitario("producto2","Descripcion del producto 2",3,4));
-	}
 	
-	@RequestMapping("/")
+	
+	@RequestMapping("/tablonproductos")
 	public String controller(Model model) {
 			
 		model.addAttribute("tabProductos",repProductos.findAll());
 		
-		return "tablonProductoFitosanitario.html";
+		return "tablonProductosFitosanitarios.html";
 			
 	}
 	

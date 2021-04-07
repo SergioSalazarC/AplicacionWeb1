@@ -38,7 +38,7 @@ public class MainPageController {
 	@RequestMapping("/")
 	public String controller(Model model) {
 		
-		return "Página-1.html";
+		return "MainPage.html";
 			
 	}
 	

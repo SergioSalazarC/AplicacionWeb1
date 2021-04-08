@@ -18,6 +18,6 @@ public class ActualizarCultivoController {
 		aux.setPlantado(recogido.getPlantado());
 		/*aux.setTratamientos(recogido.getTratamientos());*/
 		repCultivo.save(aux);
-		return "mensaje2.html";
+		return "mensaje6.html";
 	}
 }

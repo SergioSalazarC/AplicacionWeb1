@@ -39,8 +39,8 @@
               <input type="text" placeholder="Nombre" id="name-558c" name="identificador" class="u-border-1 u-border-grey-30 u-input u-input-rectangle" required="">
             </div>
             <div class="u-form-group u-form-submit">
-              <a th:href="@{\buscarCultivo(identificador = ${#name-558c})}"  class="u-btn u-btn-submit u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-1">Submit</a>
-              <input   type="submit" value="submit" class="u-form-control-hidden">             
+               <input   type="submit" value="submit" class="u-btn u-btn-submit u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-1">
+                           
             </div>
             <div class="u-form-send-message u-form-send-success"></div>
             <div class="u-form-send-error u-form-send-message">Error</div>
@@ -52,7 +52,6 @@
         <p>	
 	    	<a th:href= "AddCultivo.html">Anadir nuevo cultivo</a> <br/>
 		</p>
-        
 		<p th:each="cultivo : ${tabCultivos}">		
 	    	<span th:text="'Especie: '+ ${cultivo.especie}" />  <br/>
 	    	<span th:text="'Variedad: '+ ${cultivo.variedad}" />  <br/>

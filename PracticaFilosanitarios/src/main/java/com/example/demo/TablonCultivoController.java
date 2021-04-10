@@ -16,25 +16,37 @@ public class TablonCultivoController {
 
 	@Autowired
 	private CultivoRepository repCultivos;
-  
-	@RequestMapping("/tabloncultivos")
+   
+	@RequestMapping("/tabloncultivos")  
 	public String controller(Model model) {
 			
 		model.addAttribute("tabCultivos",repCultivos.findAll());
 
-		return "tablonCultivos.html";
+		return "tablonCultivos.html";  
 	}
 	@RequestMapping("/buscarCultivo")
 	public String controller2(@RequestParam(value ="identificador")String id,Model model) {
-		List<Cultivo> resultado;
-		if (id!="") {
-			resultado = repCultivos.findByEspecie(id);
-			resultado.addAll(repCultivos.findByVariedad(id));
-		}else {
-			resultado = repCultivos.findAll();
+		List<Cultivo> resultado= new ArrayList<Cultivo>();
+		List<Cultivo>consulta1 =repCultivos.findByEspecie(id);
+		List<Cultivo>consulta2=repCultivos.findByVariedad(id);
+		if(!consulta1.isEmpty() || !consulta2.isEmpty() ) {
+			resultado.addAll(consulta1);
+			resultado.addAll(consulta2);
+			model.addAttribute("tabCultivos",resultado);
+			return "tablonCultivos.html";
 		}
-		model.addAttribute("tabCultivos",resultado);
-		return "tablonCultivos.html";
+		else if(id.trim().isEmpty()){
+			resultado = repCultivos.findAll();
+			model.addAttribute("tabCultivos",resultado);
+			return "tablonCultivos.html";
+		}
+		else {
+			model.addAttribute("nombre","cultivo");
+			model.addAttribute("id",id);
+			return "NotFound.html";
+		}
+		
+		
 	}
 	
 	

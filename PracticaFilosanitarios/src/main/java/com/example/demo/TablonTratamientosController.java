@@ -16,7 +16,8 @@ public class TablonTratamientosController {
 
 	@Autowired
 	private TratamientoRepository repTratamientos;
-	
+	@Autowired
+	private CultivoRepository repCultivos;
 	
 	@PostConstruct
 	public void init() {
@@ -38,19 +39,36 @@ public class TablonTratamientosController {
 		if(t != null) {
 			resultado.add(t);	
 		}
+		List<Cultivo> resultadoAux=new ArrayList<Cultivo>();
+		List<Cultivo> consulta1 = new ArrayList<Cultivo>(repCultivos.findByEspecie(id));
+		if (!consulta1.isEmpty()) {
+			resultadoAux.addAll(consulta1);
+		}
+		consulta1 = new ArrayList<Cultivo>(repCultivos.findByVariedad(id));
+		if (!consulta1.isEmpty()) {
+			resultadoAux.addAll(consulta1);
+		}
+		
+		List<Tratamiento> consulta2;
+		for (Cultivo c:resultadoAux) {
+			consulta2= new ArrayList<Tratamiento>(repTratamientos.findByCultivo(c));
+			if (!consulta2.isEmpty()) {
+				resultado.addAll(consulta2); 
+			}
+		}
 		try {
 			LocalDate fecha = LocalDate.parse(id);
-			List<Tratamiento> consulta1 = new ArrayList<Tratamiento>(repTratamientos.findByFechaRecoleccion(fecha));
-			if(!consulta1.isEmpty()) {
-				resultado.addAll(consulta1);
+			consulta2 = new ArrayList<Tratamiento>(repTratamientos.findByFechaRecoleccion(fecha));
+			if(!consulta2.isEmpty()) {
+				resultado.addAll(consulta2);
 			}
-			consulta1 = new ArrayList<Tratamiento>(repTratamientos.findByFechaReentrada(fecha));
-			if(!consulta1.isEmpty()) {
-				resultado.addAll(consulta1);
+			consulta2 = new ArrayList<Tratamiento>(repTratamientos.findByFechaReentrada(fecha));
+			if(!consulta2.isEmpty()) {
+				resultado.addAll(consulta2);
 			}
-			consulta1 = new ArrayList<Tratamiento>(repTratamientos.findByFechaTratamiento(fecha));
-			if(!consulta1.isEmpty()) {
-				resultado.addAll(consulta1);
+			consulta2 = new ArrayList<Tratamiento>(repTratamientos.findByFechaTratamiento(fecha));
+			if(!consulta2.isEmpty()) {
+				resultado.addAll(consulta2);
 			}
 		}catch(DateTimeParseException e) {
 			

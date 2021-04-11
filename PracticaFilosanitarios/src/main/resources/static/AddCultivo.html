@@ -1,19 +1,50 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-
-<head>
-	<meta charset="ISO-8859-1">
-	<title>Añadir Cultivo</title>
-</head>
-
-<body>
-	<form method="post" action="/addCultivo">
-		<p> Especie del cultivo: <input type="text" name="especie"></p>
-		<p> Variedad: <input type="text" name="variedad"></p>
-		<p> Fecha en al que fue plantado: <input type="date" name="plantado"></p>
-		<p> Zona en la que fue plantado: <textarea name="zona" rows=4 cols=40></textarea></p>
-		<p> Enviar: <input type="submit" value="send" /></p>
-	</form>
-</body>
-
+<html style="font-size: 16px;" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Insertar Cultivo</title>
+        
+    
+    <link rel="stylesheet" type="text/css" href="../assets/css/pagina3.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/formaux.css" /> 
+    
+    
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alata:400">
+    
+    
+    
+  </head>
+  <body class="u-body">
+    <section class="u-align-center u-clearfix u-image u-shading u-section-1" id="carousel_cebd" data-image-width="1980" data-image-height="1200">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-container-style u-group u-white u-group-1">
+          <div class="u-container-layout u-container-layout-1">
+            <h2 class="u-align-center u-text u-text-1">Cultivo</h2>
+            <div class="u-expanded-width-sm u-expanded-width-xs u-form u-form-1">
+              <form method="post" action="/addCultivo" class="u-clearfix u-form-spacing-13 u-form-vertical u-inner-form" style="padding: 0;">
+                <div class="u-form-group u-form-group-1">
+                  <label class="u-label">Especie del cultivo</label>
+                  <input type="text"  name="especie" class="u-grey-5 u-input u-input-rectangle u-input-1" >
+                </div>
+                <div class="u-form-group u-form-name u-form-group-2">
+                  <label class="u-label">Variedad</label>
+                  <input type="text" name="variedad" class="u-grey-5 u-input u-input-rectangle u-input-2" >
+                </div>
+                <div class="u-form-date u-form-group u-form-group-3">
+                  <label  class="u-label">Fecha en la que fue plantado</label>
+                  <input type="date"  name="plantado" class="u-grey-5 u-input u-input-rectangle u-input-3" >
+                </div>
+                <div class="u-form-group u-form-message u-form-group-4">
+                  <label  class="u-label">Zona en la que fue plantado</label>
+                  <textarea placeholder="" rows="4" cols="50" name="zona" class="u-grey-5 u-input u-input-rectangle u-input-4" ></textarea>
+                </div>
+                <p><input type="submit" value="Enviar" /></p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+  </body>
 </html>

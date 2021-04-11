@@ -1,0 +1,78 @@
+.u-section-1 {
+  background-image: url("../images/imagenmensaje.jpg");
+}
+
+.u-section-1 .u-sheet-1 {
+  min-height: 674px;
+}
+
+.u-section-1 .u-shape-1 {
+  width: 580px;
+  height: 497px;
+  margin: 48px auto 0 -29px;
+}
+
+.u-section-1 .u-text-1 {
+  font-size: 3.75rem;
+  margin: -347px 712px 60px 128px;
+}
+
+@media (max-width: 1199px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 556px;
+  }
+
+  .u-section-1 .u-text-1 {
+    margin-right: 612px;
+    margin-left: 28px;
+  }
+}
+
+@media (max-width: 991px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 426px;
+  }
+
+  .u-section-1 .u-shape-1 {
+    width: 491px;
+    height: 440px;
+    margin-left: auto;
+  }
+
+  .u-section-1 .u-text-1 {
+    margin-right: 420px;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 320px;
+  }
+
+  .u-section-1 .u-shape-1 {
+    margin-left: -25px;
+  }
+
+  .u-section-1 .u-text-1 {
+    margin-right: 240px;
+  }
+}
+
+@media (max-width: 575px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 201px;
+  }
+
+  .u-section-1 .u-shape-1 {
+    width: 375px;
+    height: 375px;
+    margin-top: 51px;
+    margin-left: -35px;
+  }
+
+  .u-section-1 .u-text-1 {
+    font-size: 1.5rem;
+    margin-right: 40px;
+  }
+}

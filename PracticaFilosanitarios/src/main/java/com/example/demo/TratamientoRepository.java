@@ -12,4 +12,10 @@ public interface TratamientoRepository  extends JpaRepository<Tratamiento, Long>
 	List<Tratamiento> findByFechaTratamiento(LocalDate fecha);
 	List<Tratamiento> findByFechaReentrada (LocalDate fecha);
 	List<Tratamiento> findByFechaRecoleccion (LocalDate fecha);
+	List<Tratamiento> findByFechaReentradaAfterOrderByCultivo (LocalDate fecha);
+	List<Tratamiento> findByFechaRecoleccionAfterOrderByCultivo (LocalDate fecha);
+	List<Tratamiento> findByFechaReentradaAfterOrderByFechaReentrada (LocalDate fecha);
+	List<Tratamiento> findByFechaRecoleccionAfterOrderByFechaReentrada (LocalDate fecha);
+	List<Tratamiento> findByFechaReentradaAfterOrderByFechaRecoleccion (LocalDate fecha);
+	List<Tratamiento> findByFechaRecoleccionAfterOrderByFechaRecoleccion (LocalDate fecha);
 }

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Buscar Tratamientos</title>
+        
+    
+    <link rel="stylesheet" type="text/css" href="../assets/css/pagina3.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/formaux.css" /> 
+    
+    
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alata:400">
+    
+    
+    
+  </head>
+  <body class="u-body">
+    <section class="u-align-center u-clearfix u-image u-shading u-section-1" id="carousel_cebd" data-image-width="1980" data-image-height="1200">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-container-style u-group u-white u-group-1">
+          <div class="u-container-layout u-container-layout-1">
+            <h2 class="u-align-center u-text u-text-1">Fecha del cultivo</h2>
+            <div class="u-expanded-width-sm u-expanded-width-xs u-form u-form-1">
+            
+            
+              <form method= "post"  action="/mostrarTratamientosCultivos" class="u-clearfix u-form-spacing-13 u-form-vertical u-inner-form" style="padding: 0;">
+                <div class="u-form-date u-form-group u-form-group-4">
+                  <label for="date-6456" class="u-label u-label-4">Plazo de seguridad del cultivo</label>
+                  <input type= "date" name ="plazoSeguridad" class="u-grey-5 u-input u-input-rectangle u-input-4" required="">
+                </div>
+                <div class="u-form-group u-form-select u-form-group-2">
+                  <label for="select-fedf" class="u-label">Ordenar por:</label>
+                  <div class="u-form-select-wrapper">
+                    <select  name="orden" class="u-grey-5 u-input u-input-rectangle u-input-2">
+                    	<option value = "0" selected>Especie</option>
+                    	<option value = "1">Fecha de reentrada</option>
+                    	<option value = "2">Fecha de recoleccion</option>
+                    </select>
+                    </div>
+                    <a href="AddProductoFitosanitario.html">Anadir un producto fitosanitario</a>
+                </div>
+                <p><input type="submit" value="Enviar" /></p>
+              </form>
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+  </body>
+</html>

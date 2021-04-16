@@ -4,6 +4,8 @@ import java.util.List;
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import javax.annotation.PostConstruct;
+
+import java.sql.Date;
 import java.time.LocalDate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -87,6 +89,26 @@ public class TablonTratamientosController {
 			return "NotFound.html";
 		}
 		
+	}
+	
+	@RequestMapping("/mostrarTratamientosCultivos")
+	public String controller3(Model model, @RequestParam(value = "plazoSeguridad")Date date, @RequestParam("orden") int orden) {
+		LocalDate fecha = date.toLocalDate();
+		List<Tratamiento> resultado = new ArrayList<Tratamiento>();
+		if(orden==0) {
+			resultado.addAll(repTratamientos.findByFechaReentradaAfterOrderByCultivo(fecha));
+			resultado.addAll(repTratamientos.findByFechaRecoleccionAfterOrderByCultivo(fecha));
+		}
+		else if(orden == 1) {
+			resultado.addAll(repTratamientos.findByFechaReentradaAfterOrderByFechaReentrada(fecha));
+			resultado.addAll(repTratamientos.findByFechaRecoleccionAfterOrderByFechaReentrada(fecha));
+		}
+		else {
+			resultado.addAll(repTratamientos.findByFechaReentradaAfterOrderByFechaRecoleccion(fecha));
+			resultado.addAll(repTratamientos.findByFechaRecoleccionAfterOrderByFechaRecoleccion(fecha));
+		}
+		model.addAttribute("tabTratamientos",resultado);
+		return("tablonTratamientos.html");
 	}
 	
 	

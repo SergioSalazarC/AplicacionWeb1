@@ -10,7 +10,7 @@ import java.util.Collection;
 import java.util.HashSet;
 
 @Entity
-public class Cultivo {
+public class Cultivo implements Comparable{
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
@@ -95,4 +95,11 @@ public class Cultivo {
 	public void addTratamiento(Tratamiento trat) {
 		this.tratamientos.add(trat);
 	}
+
+	@Override
+	public int compareTo(Object o) {
+		Cultivo c = (Cultivo) o;
+		return this.especie.compareTo(c.especie);
+	}
+	
 }

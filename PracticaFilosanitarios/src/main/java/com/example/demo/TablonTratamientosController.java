@@ -97,15 +97,29 @@ public class TablonTratamientosController {
 		List<Tratamiento> resultado = new ArrayList<Tratamiento>();
 		if(orden==0) {
 			resultado.addAll(repTratamientos.findByFechaReentradaAfterOrderByCultivo(fecha));
-			resultado.addAll(repTratamientos.findByFechaRecoleccionAfterOrderByCultivo(fecha));
+			for (Tratamiento trat:repTratamientos.findByFechaRecoleccionAfterOrderByCultivo(fecha)) {
+				if ( !resultado.contains(trat)) {
+					resultado.add(trat);
+				}
+			}
 		}
 		else if(orden == 1) {
 			resultado.addAll(repTratamientos.findByFechaReentradaAfterOrderByFechaReentrada(fecha));
-			resultado.addAll(repTratamientos.findByFechaRecoleccionAfterOrderByFechaReentrada(fecha));
+			for (Tratamiento trat:repTratamientos.findByFechaRecoleccionAfterOrderByFechaReentrada(fecha)) {
+				if ( !resultado.contains(trat)) {
+					resultado.add(trat);
+				}
+			}
+			
 		}
 		else {
 			resultado.addAll(repTratamientos.findByFechaReentradaAfterOrderByFechaRecoleccion(fecha));
-			resultado.addAll(repTratamientos.findByFechaRecoleccionAfterOrderByFechaRecoleccion(fecha));
+			for (Tratamiento trat:repTratamientos.findByFechaRecoleccionAfterOrderByFechaRecoleccion(fecha)) {
+				if ( !resultado.contains(trat)) {
+					resultado.add(trat);
+				}
+			}
+			
 		}
 		model.addAttribute("tabTratamientos",resultado);
 		return("tablonTratamientos.html");

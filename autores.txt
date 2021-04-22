@@ -1,0 +1,18 @@
+Sergio Salazar Cárdenas(51538604C):
+	·Ha realizado las plantillas : AddProductoFitosanitario,EditarProductoFitosanitario,mensaje1,mensaje2 y tablonProductoFitosanitarios
+	·Ha realizado los controladores: ActualizarProductoFitosanitarioController,AñadirProductoFitosanitarioController,EditarProductoFitosanitarioController y TablonProductoFitosanitariosController
+	·Ha creado la entidad de ProductosFitosanitarios
+	·Ha realizado el repositorio de los Productos Fitosanitarios
+Francisco Tórtola Vivo(47097046S):
+	·Ha realizado las plantillas : AddTratamiento,EditarTratamiento,mensaje4,mensaje5 y tablonTratamientos
+	·Ha realizado los controladores: ActualizarTratamientoController,AñadirTratamientoController,EditarTratamientoController y TablonTratamientosController
+	·Ha creado la entidad de Tratamientos
+	·Ha realizado el repositorio de los tratamientos
+Juan Antonio Gordillo Gayo(02762692R):
+	·Ha realizado las plantillas : AddCultivo,EditarCultivo,mensaje3,mensaje6,NotFound y tablonCultivos
+	·Ha realizado los controladores: ActualizarCultivoController,AñadirCultivoController,EditarCultivoController y TablonCultivosController
+	·Ha creado la entidad de Cultivo
+	·Ha realizado el repositorio de los cultivos
+
+El resto de elemetos del trabajo se ha desarrollado de manera conjunta pero habiendose centrado Sergio en el aspecto estético, Francisco en la implementacion de la busqueda por plazo de seguridad en vigor y Juan Antonio de la implementacion de la busqueda por nombre.
+Los tres compañeros del grupo reconocemos haber trabajado de forma  equitativa. 

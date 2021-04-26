@@ -15,4 +15,5 @@ Juan Antonio Gordillo Gayo(02762692R):
 	·Ha realizado el repositorio de los cultivos
 
 El resto de elemetos del trabajo se ha desarrollado de manera conjunta pero habiendose centrado Sergio en el aspecto estético, Francisco en la implementacion de la busqueda por plazo de seguridad en vigor y Juan Antonio de la implementacion de la busqueda por nombre.
+De igual manera todos reconocemos haber participado en todos los aspectos de la practica de alguna forma.
 Los tres compañeros del grupo reconocemos haber trabajado de forma  equitativa. 
